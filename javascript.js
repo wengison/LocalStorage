@@ -121,26 +121,29 @@ class UI {
             
         //     value = JSON.parse(localStorage.getItem(`book-${val}`));
         // }
-
         let value1 = JSON.parse(localStorage.getItem('book-1'));
         let value2 = JSON.parse(localStorage.getItem('book-2'));
         let value3 = JSON.parse(localStorage.getItem('book-3'));
-        let first = value1[Object.keys(value1)[0]];
-        let second = value1[Object.keys(value1)[1]];
-        let third = value1[Object.keys(value1)[2]];
-        console.log(value1)
-        // console.log(first, second, third);
 
-        const rows = document.querySelector('.rows');   
-        let bigLi = `
-        <ul class="bigLi">
-            <p>${first}</p>
-            <p>${second}</p>
-            <p>${third}</p>
-            <i class="li-close"><button class="li-close-btn">Delete</button></i>
-        </ul>`;
-        
-        rows.innerHTML += bigLi;
+        (value1 === null & value2 === null & value3 === null) ? ()=>{
+            value1=1; value2=2; value3=3;
+        } :
+        ()=>{
+            let first = value1[Object.keys(value1)[0]];
+            let second = value1[Object.keys(value1)[1]];
+            let third = value1[Object.keys(value1)[2]];
+            console.log(value1)
+            // console.log(first, second, third);
+            const rows = document.querySelector('.rows');   
+            let bigLi = `
+            <ul class="bigLi">
+                <p>${first}</p>
+                <p>${second}</p>
+                <p>${third}</p>
+                <i class="li-close"><button class="li-close-btn">Delete</button></i>
+            </ul>`;
+            rows.innerHTML += bigLi;
+        }
         Book.createBtn();
     }
 }
