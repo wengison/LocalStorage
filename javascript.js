@@ -125,9 +125,8 @@ class UI {
         let value2 = JSON.parse(localStorage.getItem('book-2'));
         let value3 = JSON.parse(localStorage.getItem('book-3'));
 
-        (value1 === null & value2 === null & value3 === null) ? ()=>{
-            value1=1; value2=2; value3=3;
-        } :
+        (value1 === null & value2 === null & value3 === null) ? 
+            ()=>{value1=1; value2=2; value3=3} :
         ()=>{
             let first = value1[Object.keys(value1)[0]];
             let second = value1[Object.keys(value1)[1]];
